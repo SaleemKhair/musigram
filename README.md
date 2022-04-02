@@ -1,7 +1,7 @@
 **Tone Clock Diagram**
 ===
  Translate MIDI (signals/files) to Musical Tone-Clocks based on the Tone-Clock Throry.
-
+![tone-clock main](https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg)
 ## Description
 ---
 The Tone Clock, and its related compositional theory Tone-Clock Theory, is a post-tonal music composition technique, developed by composers Peter Schat and Jenny McLeod.
