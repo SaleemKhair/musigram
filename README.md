@@ -61,7 +61,7 @@ $ python3 -c 'import mido; exit(mido.get_output_names())'
 ```
 ## Testing
 ---
-This project uses `tox` and `pytest` to run tests, to execute tests run the and the test commands are managed by `Make` following:
+This project uses `tox` and `pytest` to run tests, the test commands are managed by `Make` following:
 ```
 $ make test clean
 ```
