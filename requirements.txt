@@ -1,0 +1,6 @@
+mido
+JACK-Client
+python-rtmidi
+pytest
+pulsectl
+

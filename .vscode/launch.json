@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "name": "Python: Run Server",
+            "type": "python",
+            "request": "launch",
+            "module": "src.server",
+            "justMyCode": false,
+            "preLaunchTask": "Makefile: Install"
+        },
+        {
+            "python": "/usr/bin/python3",
+            "name": "Python: tox",
+            "request": "launch",
+            "type": "python",
+            "module": "tox",
+            "justMyCode": true,
+
+        },
+        {
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "name": "Python: pytest",
+            "request": "launch",
+            "type": "python",
+            "module": "pytest",
+            "args": ["-rP"],
+            "justMyCode": false
+        }
+    ]
+}
