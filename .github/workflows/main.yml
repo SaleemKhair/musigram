@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install Platform Deps
-        run: apt install -y jacklib0 jacklib-dev libasound2-dev
+        run: sudo apt-get install -y jacklib0 jacklib-dev libasound2-dev
       - name: Set up Python 3.8
         uses: actions/setup-python@v3
         with: 
