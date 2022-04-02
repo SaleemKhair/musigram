@@ -10,8 +10,9 @@ The Tone Clock, and its related compositional theory Tone-Clock Theory, is a pos
 
 Music written using tone-clock theory features a high economy of musical intervals within a generally chromatic musical language
 
-[Read more...](https://en.wikipedia.org/wiki/Tone_Clock)
-
+Read more:
+- [Tone-Clock](https://en.wikipedia.org/wiki/Tone_Clock)
+- [Set-Theory (music)](https://en.m.wikipedia.org/wiki/Set_theory_(music))
 ## Development Environment
 ---
 Depends On:
