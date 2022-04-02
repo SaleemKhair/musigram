@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Makefile: Install",
+            "type": "shell",
+            "command": "make install",
+            "dependsOn": "Makefile: Test"
+        },
+        {
+            "label": "Makefile: Test",
+            "type": "shell",
+            "command": "make test",
+        }
+    ]
+}
