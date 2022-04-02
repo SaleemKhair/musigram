@@ -17,6 +17,7 @@ Depends On:
 - [make](https://www.gnu.org/software/make/)
 - [libjack0](https://packages.debian.org/sid/libjack0)
 - [libjack-dev](https://packages.debian.org/sid/libjack-dev)
+- [libasound2-dev](https://packages.debian.org/sid/libasound2-dev)
 
 Supports Platform: Linux | Debian
 ## Preperation
@@ -32,7 +33,7 @@ $ python3 -m pip install -U tox
 
 On Ubuntu
 ```
-$ sudo apt-get install -y make libjack0 libjack-dev
+$ sudo apt-get install -y make libjack0 libjack-dev libasound2-dev
 ```
  
 ## Running
