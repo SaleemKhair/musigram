@@ -30,7 +30,7 @@ $ python3 -m pip install -U tox
 ### Install Platform Dependencies 
 `make`, `libjack0`, `libjack-dev`
 
-On Ubintu
+On Ubuntu
 ```
 $ sudo apt-get install -y make libjack0 libjack-dev
 ```
