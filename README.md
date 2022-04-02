@@ -1,6 +1,8 @@
 **Tone Clock Diagram**
 ===
  Translate MIDI (signals/files) to Musical Tone-Clocks based on the Tone-Clock Throry.
+
+
 ![tone-clock main](https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg)
 ## Description
 ---
