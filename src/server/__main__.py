@@ -8,14 +8,15 @@ import logging.config
 logging.config.fileConfig('logging.conf')
 LOG = logging.getLogger('server')
 
-# TODO Dynamicaly allocate/create virtual MIDI ports
+# TODO Refactor: Design, Config
+# Dynamicaly allocate/create virtual MIDI ports
 ## The default 'snd_virmidi' kernel module I/O port name.
 ## I/O port names can be different depending on machine, 
 ## Input Port and Output Port might have different names
 MIDI_PORT_NAME='Virtual Raw MIDI 1-0:VirMIDI 1-0 20:0'
 
 #####################################################################################
-# TODO Support for Windows_NT
+# TODO Support: Windows_NT
 ## This part is tightly coupled with Platform OS and will not work in 'Windows_NT' 
 #####################################################################################
 
