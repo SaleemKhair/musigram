@@ -1,9 +1,9 @@
 **Tone Clock Diagram**
-===
- Translate MIDI (signals/files) to Musical Tone-Clocks based on the Tone-Clock Throry.
+=== 
+<p align="right">
+<a><img alt="Main Branch" src="https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg"></a>
+</p>
 
-
-![tone-clock main](https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg)
 ## Description
 ---
 The Tone Clock, and its related compositional theory Tone-Clock Theory, is a post-tonal music composition technique, developed by composers Peter Schat and Jenny McLeod.
@@ -23,6 +23,8 @@ Depends On:
 - [libasound2-dev](https://packages.debian.org/sid/libasound2-dev)
 
 Supports Platform: Linux | Debian
+<br>
+
 ## Preperation
 ---
 ### Install `tox`
@@ -38,7 +40,8 @@ On Ubuntu
 ```
 $ sudo apt-get install -y make libjack0 libjack-dev libasound2-dev
 ```
- 
+ <br>
+
 ## Running
 ---
 To start listening on MIDI device port
@@ -60,9 +63,18 @@ $ python3 -c 'import mido; exit(mido.get_input_names())'
 ## to get output names
 $ python3 -c 'import mido; exit(mido.get_output_names())'
 ```
+<br>
+
 ## Testing
 ---
 This project uses `tox` and `pytest` to run tests, the test commands are managed by `Make` following:
 ```
 $ make test clean
 ```
+<br>
+
+## Troubleshooting
+---
+### Integrate PulseAudio with JACK
+If youre using PulseAudio or its the default driver for some of your applications (ex Firefox)
+JACK might not be able to add or manage its i/o(s), [See](https://jfearn.fedorapeople.org/fdocs/en-US/Fedora_Draft_Documentation/0.1/html/Musicians_Guide/sect-Musicians_Guide-Integrating_PulseAudio_with_JACK.html), to be able to use JACK as the main driver.
