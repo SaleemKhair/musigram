@@ -34,7 +34,7 @@ Using pip
 $ python3 -m pip install -U tox
 ```
 ### Install Platform Dependencies 
-`make`, `libjack0`, `libjack-dev`
+`make`, `libjack0`, `libjack-dev`, `libasound2-dev`
 
 On Ubuntu
 ```
