@@ -6,31 +6,30 @@ Tone Clock Diagram
 ![](https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg)
 
 
+#### **A library to translate MIDI signals into __pitch-class sets__ or __tone-clock sets__, and provide basic analysis operations.**
+----
+
 ### Background
 ---
-A library to translate MIDI signals into __pitch-class sets__ or __tone-clock sets__, and provide basic analysis operations.
 
 The **Tone Clock**, and its related compositional [tone-clock](https://en.wikipedia.org/wiki/Tone_Clock) theory, is a post-tonal music composition technique, developed by composers Peter Schat and Jenny McLeod.
 
+>Music written using **Tone Clock** theory features a high economy of musical intervals within a generally chromatic musical language.
 
-Music written using **Tone Clock** theory features a high economy of musical intervals within a generally chromatic musical language.
-
----
 The [pitch-class set](https://en.m.wikipedia.org/wiki/Set_theory_(music)) theory provides concepts for categorizing musical objects and describing their relationships. Howard Hanson first elaborated many of the concepts for analyzing tonal music
 
 ---
-<br>
 
 ### Development Environment
 ---
-#### Depends On:
+#### **Depends On:**
 - [libjack0](https://packages.debian.org/sid/libjack0)
 - [libjack-dev](https://packages.debian.org/sid/libjack-dev)
 - [libasound2-dev](https://packages.debian.org/sid/libasound2-dev)
 
-Supports Platform: Linux | Debian
-<br>
+**Supports Platform:** Linux | Debian
 
+---
 ### Preperation
 ---
 
@@ -63,22 +62,22 @@ source .venv/bin/activate
 ```bash
 (.venv)~$ pip install -r requirements.txt
 ```
-
+---
 ### Scripts
 ---
 
 * [proc_clock_vermidi](bin/proc_clock_vermidi):
 Subscribes to a MIDI and serializes each midi signal to a clock in real-time.
 
-
+---
 ### Testing
 ---
 >This project uses `tox` and `pytest` to run tests.
 ```
 $ tox -e py38
 ```
-
-## Troubleshooting
+---
+### Troubleshooting
 ---
 #### MIDI Ports
 >To get a list of input/output names use
