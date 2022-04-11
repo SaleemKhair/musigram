@@ -1,61 +1,85 @@
-**Tone Clock Diagram**
+**Tone Clock**
 === 
-<p align="right">
-<a><img alt="Main Branch" src="https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg"></a>
-</p>
+Tone Clock Diagram
 
-## Description
+
+![](https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg)
+
+
+#### **A library to translate MIDI signals into __pitch-class sets__ or __tone-clock sets__, and provide basic analysis operations.**
+----
+
+### Background
 ---
-The Tone Clock, and its related compositional theory Tone-Clock Theory, is a post-tonal music composition technique, developed by composers Peter Schat and Jenny McLeod.
 
-Music written using tone-clock theory features a high economy of musical intervals within a generally chromatic musical language
+The **Tone Clock**, and its related compositional [tone-clock](https://en.wikipedia.org/wiki/Tone_Clock) theory, is a post-tonal music composition technique, developed by composers Peter Schat and Jenny McLeod.
 
-Read more:
-- [Tone-Clock](https://en.wikipedia.org/wiki/Tone_Clock)
-- [Set-Theory (music)](https://en.m.wikipedia.org/wiki/Set_theory_(music))
-## Development Environment
+>Music written using **Tone Clock** theory features a high economy of musical intervals within a generally chromatic musical language.
+
+The [pitch-class set](https://en.m.wikipedia.org/wiki/Set_theory_(music)) theory provides concepts for categorizing musical objects and describing their relationships. Howard Hanson first elaborated many of the concepts for analyzing tonal music
+
 ---
-Depends On:
-- [tox](https://tox.wiki/en/latest/index.html)
-- [make](https://www.gnu.org/software/make/)
+
+### Development Environment
+---
+#### **Depends On:**
 - [libjack0](https://packages.debian.org/sid/libjack0)
 - [libjack-dev](https://packages.debian.org/sid/libjack-dev)
 - [libasound2-dev](https://packages.debian.org/sid/libasound2-dev)
 
-Supports Platform: Linux | Debian
-<br>
+**Supports Platform:** Linux | Debian
 
-## Preperation
 ---
-### Install `tox`
+### Preperation
+---
 
-Using pip
+#### 1. Install Platform Dependencies 
+`libjack0`, `libjack-dev`, `libasound2-dev`
+
+>On Ubuntu
+```
+$ sudo apt-get install -y libjack0 libjack-dev libasound2-dev
+```
+
+#### 2. Install `tox`
+
+>Using pip
 ```bash
 $ python3 -m pip install -U tox
 ```
-### Install Platform Dependencies 
-`make`, `libjack0`, `libjack-dev`, `libasound2-dev`
 
-On Ubuntu
-```
-$ sudo apt-get install -y make libjack0 libjack-dev libasound2-dev
-```
- <br>
-
-## Running
----
-To start listening on MIDI device port
-### using Makefile
+#### 3. Setup project
+>setup python virtual environment
 ```bash
-$ make run
+~$ git clone https://github.com/SaleemKhair/tone-clock
+~$ cd tone-clock
+## create virtual environment under .venv
+~$ python3 -m venv .venv
+## activate
+source .venv/bin/activate
 ```
+>install dependencies
+```bash
+(.venv)~$ pip install -r requirements.txt
+```
+---
+### Scripts
+---
 
-### in Visual Studio Code
+* [proc_clock_vermidi](bin/proc_clock_vermidi):
+Subscribes to a MIDI and serializes each midi signal to a clock in real-time.
 
-if you are using vscode theres a `.vscode` file included in the project path.
-
->To specify input/output port names change the `MIDI_PORT_NAME` variable in the `server` module file `src/server/__main__py`
-
+---
+### Testing
+---
+>This project uses `tox` and `pytest` to run tests.
+```
+$ tox -e py38
+```
+---
+### Troubleshooting
+---
+#### MIDI Ports
 >To get a list of input/output names use
 ```bash
 ## to get input names
@@ -63,18 +87,7 @@ $ python3 -c 'import mido; exit(mido.get_input_names())'
 ## to get output names
 $ python3 -c 'import mido; exit(mido.get_output_names())'
 ```
-<br>
 
-## Testing
----
-This project uses `tox` and `pytest` to run tests, the test commands are managed by `Make` following:
-```
-$ make test clean
-```
-<br>
-
-## Troubleshooting
----
-### Integrate PulseAudio with JACK
-If youre using PulseAudio or its the default driver for some of your applications (ex Firefox)
+#### Integrate PulseAudio with JACK
+>If youre using PulseAudio or its the default driver for some of your applications (ex Firefox)
 JACK might not be able to add or manage its i/o(s), [See](https://jfearn.fedorapeople.org/fdocs/en-US/Fedora_Draft_Documentation/0.1/html/Musicians_Guide/sect-Musicians_Guide-Integrating_PulseAudio_with_JACK.html), to be able to use JACK as the main driver.

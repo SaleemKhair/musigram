@@ -1,0 +1,66 @@
+
+#!/usr/bin/env python
+from mido import open_input, open_output, get_output_names, get_input_names
+import subprocess, logging
+from conf import setup_logging
+from diagram.serialization import ClockSerializer
+
+
+setup_logging(default_level=logging.DEBUG)
+LOG = logging.getLogger(__package__)
+
+# TODO Refactor: Design, Config
+# Dynamicaly allocate/create virtual MIDI ports
+## The default 'snd_virmidi' kernel module I/O port name.
+## I/O port names can be different depending on machine, 
+## Input Port and Output Port might have different names
+MIDI_IN_PORT_NAME=get_output_names()[1]
+MIDI_OUT_PORT_NAME=get_input_names()[1]
+
+
+def import_module(name):
+    components = name.split('.')
+    mod = __import__(components[0])
+    for comp in components[1:]:
+        mod = getattr(mod, comp)
+    return mod
+
+#####################################################################################
+# TODO Support: Windows_NT
+## This part is tightly coupled with Platform OS and will not work in 'Windows_NT' 
+#####################################################################################
+
+def kernel_module_loaded(module_name):
+    """Checks if module is loaded"""
+    lsmod_proc = subprocess.Popen(['lsmod'], stdout=subprocess.PIPE)
+    grep_proc = subprocess.Popen(
+        ['grep', module_name], stdin=lsmod_proc.stdout)
+    grep_proc.communicate(timeout=8)  # Block until finished
+    return grep_proc.returncode == 0
+
+for module_name in ['snd_virmidi']:
+    loaded = kernel_module_loaded(module_name)
+    if not loaded:
+        LOG.warning('snd_virmidi kernel module is not loaded, to load it use:\n\n \tsudo modprobe snd_virmidi midi_devs=1\n')
+
+#####################################################################################
+
+try:
+    # Assuming input/output have the same name
+    LOG.info(f'Connecting to input port {MIDI_IN_PORT_NAME}')
+    in_port = open_input(MIDI_IN_PORT_NAME)
+    LOG.info(f'Connecting to output port {MIDI_OUT_PORT_NAME}')
+    out_port = open_output(MIDI_OUT_PORT_NAME)
+    Processor = import_module('processor.ClockProcessor')
+    for (message, clock) in Processor(ClockSerializer()).process(in_port):
+        LOG.debug(repr(clock))
+        LOG.debug(repr(message))
+        out_port.send(message)
+except KeyboardInterrupt:
+    LOG.error('User Terminate Signal Received.')
+except IOError:
+    LOG.error('Unable to open ports', exc_info=True)
+finally:
+    in_port.close()
+    out_port.close()
+    
