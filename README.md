@@ -53,7 +53,7 @@ source .venv/bin/activate
 ```
 >install dependencies
 ```bash
-(venv)~$ pip install -r requirements.txt
+(.venv)~$ pip install -r requirements.txt
 ```
 
 ### Scripts
