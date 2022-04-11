@@ -1,15 +1,32 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='tone-clock-diagram',
+      description='Translate MIDI (signals/files) to Musical Tone-Clocks based on the Tone-Clock Throry.',
       version='1.0',
+      classifiers=[
+          'Environment :: Console',
+          'Intended Audience :: Developers',
+          'License :: Apache License 2.0',
+          'Operating System :: POSIX',
+          'Programming Language :: Python',
+          'Topic :: Music',
+          'Topic :: Math',
+      ],
+      license='Apache License 2.0',
       author='Saleem Khair',
+      platforms=['POSIX'],
       author_email='saleemkhair@gmail.com',
       url='https://github.com/SaleemKhair/tone-clock-diagram',
-      package_dir={
-          'model': './src/model',
-          'serialization': './src/serialization',
-          'controller': './src/controller',
-          'server': './src/server'
-      },
-      packages=['model', 'serialization', 'controller', 'server'],
+      python_requires='>= 3.8.10',
+      install_requires=[
+          'mido >= 1.2.10',
+          'JACK-Client >= 0.5.3',
+          'python-rtmidi >= 1.4.9',
+          'pulsectl >= 22.3.2',
+          'coloredlogs >= 15.0.1',
+          'pyyaml >= 6.0'
+      ],
+      packages=find_packages('src'),
+      package_dir={'': 'src'},
+      scripts=['bin/proc_clock_vermidi']
       )
