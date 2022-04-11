@@ -27,11 +27,11 @@ Supports Platform: Linux | Debian
 ---
 
 #### 1. Install Platform Dependencies 
-`make`, `libjack0`, `libjack-dev`, `libasound2-dev`
+`libjack0`, `libjack-dev`, `libasound2-dev`
 
 >On Ubuntu
 ```
-$ sudo apt-get install -y make libjack0 libjack-dev libasound2-dev
+$ sudo apt-get install -y libjack0 libjack-dev libasound2-dev
 ```
 
 #### 2. Install `tox`
