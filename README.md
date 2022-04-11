@@ -1,18 +1,23 @@
 **Tone Clock Diagram**
 === 
-<p align="right">
-<a><img alt="Main Branch" src="https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg"></a>
-</p>
+![](https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg)
+
 
 ### Description
 ---
-The Tone Clock, and its related compositional theory Tone-Clock Theory, is a post-tonal music composition technique, developed by composers Peter Schat and Jenny McLeod.
+A library to translate MIDI signals into __pitch-class sets__ or __tone-clock sets__, and provide basic analysis operations.
 
-Music written using tone-clock theory features a high economy of musical intervals within a generally chromatic musical language
+The **Tone Clock**, and its related compositional [tone-clock](https://en.wikipedia.org/wiki/Tone_Clock) theory, is a post-tonal music composition technique, developed by composers Peter Schat and Jenny McLeod.
 
-Read more:
-- [Tone-Clock](https://en.wikipedia.org/wiki/Tone_Clock)
-- [Set-Theory (music)](https://en.m.wikipedia.org/wiki/Set_theory_(music))
+
+Music written using **Tone Clock** theory features a high economy of musical intervals within a generally chromatic musical language.
+
+---
+The [pitch-class set](https://en.m.wikipedia.org/wiki/Set_theory_(music)) theory provides concepts for categorizing musical objects and describing their relationships. Howard Hanson first elaborated many of the concepts for analyzing tonal music
+
+---
+<br>
+
 ### Development Environment
 ---
 #### Depends On:
