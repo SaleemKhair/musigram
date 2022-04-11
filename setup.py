@@ -1,7 +1,10 @@
 from setuptools import setup, find_packages
 
-setup(name='tone-clock-diagram',
-      description='Translate MIDI (signals/files) to Musical Tone-Clocks based on the Tone-Clock Throry.',
+setup(name='musigram',
+      description='''
+        Library to translate MIDI signals into pitch-class sets or tone-clock sets,
+        and provide basic post-tonal analysis operations.
+      ''',
       version='1.0',
       classifiers=[
           'Environment :: Console',

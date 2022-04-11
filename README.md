@@ -1,12 +1,12 @@
-**Tone Clock**
+**MusiGram**
 === 
-Tone Clock Diagram
 
+[**Tone Clock**](https://en.wikipedia.org/wiki/Tone_Clock) and [**Pitch-Class Set**](https://en.m.wikipedia.org/wiki/Set_theory_(music)) Diagram Genetation and Analysis 
 
 ![](https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg)
 
 
-#### **A library to translate MIDI signals into __pitch-class sets__ or __tone-clock sets__, and provide basic analysis operations.**
+#### **Library to translate MIDI signals into __pitch-class sets__ or __tone-clock sets__, and provide basic post-tonal analysis operations.**
 ----
 
 ### Background
