@@ -1,9 +1,12 @@
-**Tone Clock Diagram**
+**Tone Clock**
 === 
+Tone Clock Diagram
+
+
 ![](https://github.com/SaleemKhair/tone-clock/actions/workflows/main.yml/badge.svg)
 
 
-### Description
+### Background
 ---
 A library to translate MIDI signals into __pitch-class sets__ or __tone-clock sets__, and provide basic analysis operations.
 
