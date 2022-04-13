@@ -1,6 +1,6 @@
 from __future__ import annotations
-from typing import Dict, List
-import logging
+from typing import Dict, List, Sequence
+import logging, copy
 
 
 LOG = logging.getLogger(__package__)
@@ -69,11 +69,18 @@ class Clock:
         if hour in self.__hours: self.__hours.remove(hour)
         if key in self.__keys:self.__keys.remove(key)
 
+    def get_set(self) -> Sequence:
+        return self.__hours
+
     def invert(self) -> Clock:
         pass
 
     def transpose(self, by: int) -> Clock:
-        pass
+        transposed: Clock = copy.deepcopy(self)
+        for i, hr in enumerate(transposed.__hours):
+            transposed.__hours[i] = map_note_to_hour(hr + by)
+            transposed.__keys[i] = map_hour_to_key(hr)
+        return transposed
 
     def rotate(self, by: int) -> Clock:
         pass

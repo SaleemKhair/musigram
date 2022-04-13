@@ -8,3 +8,4 @@ target/
 **/*.pyc
 .pytest_cache/
 *.spec
+.vscode/settings.json

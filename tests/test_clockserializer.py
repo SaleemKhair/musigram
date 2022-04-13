@@ -1,8 +1,8 @@
 from diagram.serialization import ClockSerializer
-from mido import MidiFile, MetaMessage, MidiTrack
+from mido import MidiFile, MetaMessage
 import unittest
 
-class TestToneClockSerializer(unittest.TestCase):
+class TestClockSerializer(unittest.TestCase):
     def test_serialize(self):
         midi_file = MidiFile('./data/Nothing Else Matters - Metallica.mid')
         for track in midi_file.tracks:   
