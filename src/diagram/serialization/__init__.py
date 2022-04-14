@@ -4,8 +4,7 @@ from ..model import Clock
 from diagram import Serializer
 import threading
 
-LOG = logging.getLogger(__package__)
-
+LOG = logging.getLogger(__name__)
 class ClockSerializer(Serializer):
     """
     A Serializer that parses MIDI messages to Clock instances.
@@ -33,6 +32,7 @@ class ClockSerializer(Serializer):
                 self.__chord.clock.remove(message.note)
             if message.type == 'note_on': # add note to cached instance and return state
                 self.__chord.clock.append(message.note)
+        LOG.debug(repr(self.__chord.clock))
         return self.__chord.clock
 
     def play(self, file_path):

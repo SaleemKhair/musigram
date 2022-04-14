@@ -2,12 +2,12 @@
 #!/usr/bin/env python
 from mido import open_input, open_output, get_output_names, get_input_names
 import subprocess, logging
-from conf import setup_logging
 from diagram.serialization import ClockSerializer
-
+from conf import setup_logging
 
 setup_logging(default_level=logging.DEBUG)
-LOG = logging.getLogger(__package__)
+
+LOG = logging.getLogger(__name__)
 
 # TODO Refactor: Design, Config
 # Dynamicaly allocate/create virtual MIDI ports
