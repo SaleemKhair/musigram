@@ -19,6 +19,8 @@ The **Tone Clock**, and its related compositional [tone-clock](https://en.wikipe
 
 The [pitch-class set](https://en.m.wikipedia.org/wiki/Set_theory_(music)) theory provides concepts for categorizing musical objects and describing their relationships. Howard Hanson first elaborated many of the concepts for analyzing tonal music
 
+<img src="https://img.youtube.com/vi/oGeBem72R3Y/hqdefault.jpg" style="display: block; margin: 0 auto" href="https://www.youtube.com/watch?v=oGeBem72R3Y">
+
 ---
 
 ### Development Environment
