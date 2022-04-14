@@ -4,8 +4,7 @@ from ..model import Clock
 from diagram import Serializer
 from typing import Dict
 
-LOG = logging.getLogger(__package__)
-
+LOG = logging.getLogger(__name__)
 class ClockSerializer(Serializer):
     """
     A Serializer that parses MIDI messages to Clock instances.
@@ -24,11 +23,11 @@ class ClockSerializer(Serializer):
             if message.type == 'note_off': # remove note from cached instance and return state
                 self.clock.remove(message.note)
             if message.type == 'note_on': # add note to cached instance and return state
+
                 self.clock.append(message.note)
         LOG.debug(repr(self.clock))
         LOG.debug(repr(message))
         return self.clock
-
 
     def play(self, file_path):
         with open(file=file_path, mode='rb') as midi_file:

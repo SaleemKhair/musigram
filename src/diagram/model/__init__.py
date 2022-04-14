@@ -3,7 +3,7 @@ from typing import Dict, List, Sequence
 import logging, copy
 
 
-LOG = logging.getLogger(__package__)
+LOG = logging.getLogger(__name__)
 
 NOTE_KEYS: Dict[int, str] = {
     4: 'E',
