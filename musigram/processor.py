@@ -1,4 +1,4 @@
-from diagram import Serializer, Processor
+from . import Serializer, Processor
 import logging
 
 LOG = logging.getLogger(__name__)
