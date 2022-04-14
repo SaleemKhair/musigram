@@ -52,8 +52,8 @@ $ python3 -m pip install -U tox
 #### 3. Setup project
 >setup python virtual environment
 ```bash
-~$ git clone https://github.com/SaleemKhair/tone-clock
-~$ cd tone-clock
+~$ git clone https://github.com/SaleemKhair/musigram
+~$ cd musigram
 ## create virtual environment under .venv
 ~$ python3 -m venv .venv
 ## activate
