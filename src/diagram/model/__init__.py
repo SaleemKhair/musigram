@@ -109,4 +109,4 @@ class Clock:
         pass
 
     def __repr__(self) -> str:
-        return f'Clock( intervals: {self.__hours}, keys: {self.__keys} )'
+        return f'Clock( intervals: {self.__hours}, keys: {self.__keys}, channel: {self.channel})'
