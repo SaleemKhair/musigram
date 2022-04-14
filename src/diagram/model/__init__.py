@@ -72,38 +72,40 @@ class Clock:
     def get_set(self) -> Sequence:
         return self.__hours
 
-    def invert(self) -> Clock:
-        pass
+    def invert(self, n: int) -> Clock:
+        """
+        the inverse operation is sometimes designated as T(n)I,
+        where I means "invert" and T(n) means "transpose by some interval n" measured in number of semitones.
+        Thus, inversion is a combination of an inversion followed by a transposition.
+        """
+        inverted: Clock = copy.deepcopy(self)
+        for i, hr in enumerate(inverted.__hours):
+            invert = map_note_to_hour((12 - hr) + n)
+            inverted.__hours[i] = invert
+            inverted.__keys[i] = map_hour_to_key(invert)
+        return inverted
 
     def transpose(self, by: int) -> Clock:
         transposed: Clock = copy.deepcopy(self)
         for i, hr in enumerate(transposed.__hours):
-            transposed.__hours[i] = map_note_to_hour(hr + by)
-            transposed.__keys[i] = map_hour_to_key(hr)
+            transpose = map_note_to_hour(hr + by)
+            transposed.__hours[i] = transpose
+            transposed.__keys[i] = map_hour_to_key(transpose)
         return transposed
 
-    def rotate(self, by: int) -> Clock:
-        pass
-    
-    def retrograde(self, by: int) -> Clock:
-        pass
-
     def is_transpositionally_relative(self, other: Clock) -> bool:
-        pass
+        for i in range(12):
+            if other.transpose(i).get_set() == self.get_set():
+              return True  
+        return False
     
-    def is_inversionally_relateive(self, othet: Clock) -> bool:
-        pass
-
-    def is_equals(self, other: Clock) -> bool:
-        return self._is_reflective(other) and self._is_symmetical(other) and self._is_transitive(other)
-
-    def _is_reflective(self, other: Clock) -> bool:
-        pass
+    def is_inversionally_relateive(self, other: Clock) -> bool:
+        for i in range(12):
+            if other.invert(i).get_set() == self.get_set():
+              return True  
+        return False
 
     def _is_symmetical(self, other: Clock) -> bool:
-        pass
-
-    def _is_transitive(self, other: Clock) -> bool:
         pass
 
     def __repr__(self) -> str:
