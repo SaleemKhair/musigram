@@ -53,8 +53,6 @@ try:
     out_port = open_output(MIDI_OUT_PORT_NAME)
     Processor = import_module('processor.ClockProcessor')
     for (message, clock) in Processor(ClockSerializer()).process(in_port):
-        LOG.debug(repr(clock))
-        LOG.debug(repr(message))
         out_port.send(message)
 except KeyboardInterrupt:
     LOG.error('User Terminate Signal Received.')
