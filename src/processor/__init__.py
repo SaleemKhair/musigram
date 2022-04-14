@@ -1,7 +1,7 @@
 from diagram import Serializer, Processor
 import logging
 
-LOG = logging.getLogger(__package__)
+LOG = logging.getLogger(__name__)
 class ClockProcessor(Processor):
     def __init__(self, serializer: Serializer):
         self._serializer = serializer

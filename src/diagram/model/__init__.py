@@ -3,7 +3,7 @@ from typing import Dict, List, Sequence
 import logging, copy
 
 
-LOG = logging.getLogger(__package__)
+LOG = logging.getLogger(__name__)
 
 NOTE_KEYS: Dict[int, str] = {
     4: 'E',
@@ -109,4 +109,4 @@ class Clock:
         pass
 
     def __repr__(self) -> str:
-        return f'Clock( set: {self.__hours}, keys: {self.__keys} )'
+        return f'Clock( intervals: {self.__hours}, keys: {self.__keys} )'
