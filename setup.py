@@ -29,7 +29,6 @@ setup(name='musigram',
           'coloredlogs >= 15.0.1',
           'pyyaml >= 6.0'
       ],
-      packages=find_packages('src'),
-      package_dir={'': 'src'},
+      packages=find_packages(exclude='tests'),
       scripts=['bin/proc_clock_vermidi']
       )

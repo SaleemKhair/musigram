@@ -1,4 +1,4 @@
-from diagram.serialization import ClockSerializer
+from musigram.serialization import ClockSerializer
 from mido import MidiFile, MetaMessage
 import unittest
 

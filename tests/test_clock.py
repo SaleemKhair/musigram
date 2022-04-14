@@ -1,5 +1,5 @@
 import unittest
-from diagram.model import Clock
+from musigram.model import Clock
 
 
 class TestClock(unittest.TestCase):

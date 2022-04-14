@@ -67,17 +67,17 @@ root:
     propogate: yes
 
 loggers:
-    diagram.serialization:
+    musigram.serialization:
         level: DEBUG
         handlers: [console, info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warn_file_handler]
         propogate: no
     
-    diagram.model:
+    musigram.model:
         level: DEBUG
         handlers: [console, info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warn_file_handler]
         propogate: no
     
-    processor:
-        level: INFO
+    musigram.processor:
+        level: DEBUG
         handlers: [console, info_file_handler, error_file_handler, critical_file_handler, debug_file_handler, warn_file_handler]
         propogate: no

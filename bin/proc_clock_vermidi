@@ -2,8 +2,9 @@
 #!/usr/bin/env python
 from mido import open_input, open_output, get_output_names, get_input_names
 import subprocess, logging
-from diagram.serialization import ClockSerializer
-from conf import setup_logging
+from musigram.serialization import ClockSerializer
+from musigram.processor import ClockProcessor as Processor
+from musigram.logging import setup_logging
 
 setup_logging(default_level=logging.DEBUG)
 
@@ -51,7 +52,7 @@ try:
     in_port = open_input(MIDI_IN_PORT_NAME)
     LOG.info(f'Connecting to output port {MIDI_OUT_PORT_NAME}')
     out_port = open_output(MIDI_OUT_PORT_NAME)
-    Processor = import_module('processor.ClockProcessor')
+    
     for (message, clock) in Processor(ClockSerializer()).process(in_port):
         out_port.send(message)
 except KeyboardInterrupt:
